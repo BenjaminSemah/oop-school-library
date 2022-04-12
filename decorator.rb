@@ -18,4 +18,10 @@ class CapitalizeDecorator < Decorator
   end
 end
 
-
+class TrimmerDecorator < Decorator
+  def correct_name
+    if @nameable.correct_name.size > 10
+      @nameable.correct_name[0, 10]
+    end
+  end
+end
