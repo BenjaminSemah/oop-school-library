@@ -1,6 +1,6 @@
 require './nameable.rb'
 
-class Person
+class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
     @name = name
@@ -13,6 +13,10 @@ class Person
 
   def can_use_services?
     of_age? || @parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   private
