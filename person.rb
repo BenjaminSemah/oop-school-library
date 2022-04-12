@@ -1,3 +1,5 @@
+require './nameable.rb'
+
 class Person
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
@@ -10,7 +12,7 @@ class Person
   attr_accessor :name, :age
 
   def can_use_services?
-    of_age? || @parent_permission ? true : false
+    of_age? || @parent_permission
   end
 
   private
