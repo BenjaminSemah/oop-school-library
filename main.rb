@@ -19,6 +19,7 @@ def main
   app = App.new
   app.start_console
 end
+
 def option
   case interface_options
   when '1'
